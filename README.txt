@@ -1,4 +1,4 @@
-learning_journal_basic README
+demoapp README
 ==================
 
 Getting Started

@@ -9,5 +9,5 @@
         <div id=#entryWrapper>
            {{ entry.body }}
         </div>
-        <a href="">EDIT</a>
+        <a href="{{ request.route_url('update', id=entry.id) }}">EDIT</a>
 {% endblock %}

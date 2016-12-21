@@ -6,8 +6,8 @@
             {% for entry in entries %}
                 <li class="entryListItem">
                     <h3><a href="{{ request.route_url('detail', id=entry.id) }}">{{ entry.title }}</a></h3>
-                    <hr />
                     <p class="date">Created {{ entry.creation_date }}></p>
+                    <hr />
                 </li>
             {% endfor %}
         {% else %}

@@ -1,43 +1,44 @@
 """Views for the Pyramid Learning Journal app."""
 
-from pyramid.response import Response
+from pyramid.view import view_config
 import io
 import os
 
 HERE = os.path.dirname(__file__)
 
+ENTRIES = [
+    {"title": "Entry 1", "id": 1, "creation_data": "Dec 20, 2016", "body": "I learned some stuff about some stuff."},
+    {"title": "Entry 1", "id": 2, "creation_data": "Dec 20, 2016", "body": "I learned some stuff about some stuff."},
+    {"title": "Entry 1", "id": 3, "creation_data": "Dec 20, 2016", "body": "I learned some stuff about some stuff."}
+]
 
+
+@view_config(route_name="home", renderer="templates/list.jinja2")
 def home_page(request):
     """View for the home page."""
-    file_path = os.path.join(HERE, "templates", "index.html")
-    file_data = io.open(file_path).read()
-    return Response(file_data)
+    all_my_stuff = ["pens", "book", "laptop", "other stuff", "bubbgle gum"]
+    return {"bag_list": all_my_stuff}
 
 
+@view_config(route_name="detail", renderer="string")
 def detail_view(request):
     """Handle the detail view for a specific journal entry."""
-    file_path = os.path.join(HERE, "templates", "entry.html")
-    file_data = io.open(file_path).read()
-    return Response(file_data)
+    the_id = int(request.matchdict["id"])
+    entry = ENTRIES[the_id]
+    return {"entry": entry}
 
 
+@view_config(route_name="create", renderer="string")
 def create_view(request):
     """Handle the view for creating a new entry."""
     file_path = os.path.join(HERE, "templates", "create_entry.html")
     file_data = io.open(file_path).read()
-    return Response(file_data)
+    return file_data
 
 
+@view_config(route_name="update", renderer="update")
 def update_view(request):
     """Handle the view for updating a new entry."""
     file_path = os.path.join(HERE, "templates", "edit_entry.html")
     file_data = io.open(file_path).read()
-    return Response(file_data)
-
-
-def includeme(config):
-    """Set up views with routes."""
-    config.add_view(home_page, route_name="home")
-    config.add_view(detail_view, route_name="detail")
-    config.add_view(create_view, route_name="create")
-    config.add_view(update_view, route_name="update")
+    return file_data

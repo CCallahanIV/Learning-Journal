@@ -32,7 +32,8 @@ Id like to see an example of a server done RIGHT. But I want to earn that - I wa
 
                     <p>Looking forward to building stuff.</p>"""},
     {"id": 4, "title": "Tunnels, Lights, Progress, etc.", "creation_date": "December 20th, 2016", "body": """Two quick things, the binary heap was initially a pain in the ass.  However, I feel really proud of the implementation I have.  Hooray for max OR min.
-    Finally, I'm really excited for the group project.  I feel a strong personal connection to the purpose of this app and I'm excited to put our newfound skills and knowledge to good use."""}
+    Finally, I'm really excited for the group project.  I feel a strong personal connection to the purpose of this app and I'm excited to put our newfound skills and knowledge to good use."""},
+    {"id": 5, "title": "They Said It Would Happen", "creation_date": "December 21st, 2016", "body": "Unfortunately, I think I'm enjoying too much tinkering around with data structures.  We have fallen far behind on the journal stuff.  If we didn't have next week off, I'm not sure how it would all get done.  Getting tough to balance home and school life.  But that's the fun part, right?  The challenge!  BRING IT ON, COWBOY UP."}
 ]
 
 
